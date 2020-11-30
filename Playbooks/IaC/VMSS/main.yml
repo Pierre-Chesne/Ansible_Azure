@@ -1,0 +1,92 @@
+# Installation d'un Scale Set de VM
+---
+- name: Creation d'un VM Scale Set
+  hosts: localhost
+  vars_files:
+    - vars.yml
+
+  tasks:
+    
+    - azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ location }}"
+
+    - azure.azcollection.azure_rm_securitygroup:
+        resource_group: "{{ rg_name }}"
+        name: "{{ nsg_ssh_name }}"
+        rules:
+          - name: SSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Allow
+            priority: 1001
+            direction: Inbound
+          - name: HTTTP
+            protocol: Tcp
+            destination_port_range: 80
+            access: Allow
+            priority: 1011
+            direction: Inbound                
+    
+    - azure.azcollection.azure_rm_virtualnetwork:
+        resource_group: "{{ rg_name }}"
+        name: "{{ vnet_name }}"
+        address_prefixes: "{{ address_prefixes_cidr_vnet }}"
+
+    - azure.azcollection.azure_rm_subnet:
+        resource_group: "{{ rg_name }}"
+        name: "{{ subnet_name }}"
+        address_prefix: "{{ address_prefix_cidr_subnet }}"
+        virtual_network: "{{ vnet_name }}"
+        security_group: "{{ nsg_ssh_name }}"
+
+    - azure.azcollection.azure_rm_publicipaddress:
+        resource_group: "{{ rg_name }}"
+        allocation_method: Static
+        name: "{{ public_ip_web }}"
+
+    - azure.azcollection.azure_rm_loadbalancer:
+        resource_group: "{{ rg_name }}"
+        name: "{{ vmss_lb_name }}"
+        frontend_ip_configurations:
+          - name: frontendipconf0
+            public_ip_address: "{{ public_ip_web }}"
+        backend_address_pools:
+          - name: backendaddrpool0
+        probes:
+          - name: prob0
+            port: 80
+        load_balancing_rules:
+          - name: lbrbalancingrule0
+            frontend_ip_configuration: frontendipconf0
+            backend_address_pool: backendaddrpool0
+            frontend_port: 80
+            backend_port: 80           
+            probe: prob0  
+    
+    - azure.azcollection.azure_rm_keyvaultsecret_info:
+        vault_uri: "https://{{ vault_name }}.vault.azure.net"
+        name: "{{ secret_name }}"            
+      register: sshkey
+
+    - azure.azcollection.azure_rm_virtualmachinescaleset:
+        resource_group: "{{ rg_name }}"
+        name: "{{ vmss_name }}"
+        vm_size: "{{ vm_size }}"
+        capacity: "{{ nbs_host }}"
+        virtual_network_name: "{{ vnet_name }}"
+        subnet_name: "{{ subnet_name }}"
+        admin_username: "{{ admin_username }}"
+        upgrade_policy: Manual
+        load_balancer: "{{ vmss_lb_name }}"
+        terminate_event_timeout_minutes: 10
+        ssh_password_enabled: false
+        ssh_public_keys:
+          - path: /home/{{ admin_username }}/.ssh/authorized_keys
+            key_data: "{{ sshkey['secrets'][0]['secret'] }}"
+        managed_disk_type: Standard_LRS
+        image:
+          offer: "{{ offer_vm }}"
+          publisher: "{{ publisher_vm }}"
+          sku: "{{ sku_vm }}"
+          version: "{{ version_vm }}"

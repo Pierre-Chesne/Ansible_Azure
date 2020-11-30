@@ -1,0 +1,4 @@
+rg_name: RG_App_Service
+location: westeurope
+webapp_name: webapppierrc007
+plan_name: ServicePlan

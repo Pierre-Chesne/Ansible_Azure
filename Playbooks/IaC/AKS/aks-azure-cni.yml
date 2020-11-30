@@ -1,0 +1,26 @@
+---
+- name : Deploiement d'un cluster AKS  
+  hosts: localhost
+
+  vars_files:
+    - vars.yml
+  
+  tasks:
+
+    - azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ location }}"
+
+    - name: creation du vnet
+      include_tasks: vnet.yml
+
+    - name: creation du cluster AKS
+      vars:
+        vnet_subnet_id: "{{ subnet.state.id }}"
+        subnet_resource_id: "{{ subnetvn.state.id }}"        
+      include_tasks: aks.yml
+
+    - name: Detail de la configuration
+      debug:
+        var: aks
+

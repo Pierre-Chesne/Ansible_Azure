@@ -1,0 +1,78 @@
+# Installation d'une VM
+---
+- name: Creation d'une VM
+  hosts: localhost
+  vars_files:
+    - vars.yml
+
+  tasks:
+    # Creation du "ressource groupe"
+    - azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ location }}"
+
+    - azure.azcollection.azure_rm_publicipaddress:
+        resource_group: "{{ rg_name }}"
+        name: "{{ public_ip_web }}"
+        allocation_method: "{{ allocation_method }}"
+      
+    - azure.azcollection.azure_rm_virtualnetwork:
+        name: "{{ vnet_name }}"
+        resource_group: "{{ rg_name }}"
+        address_prefixes_cidr: "{{ address_prefixes_cidr_vnet }}"
+
+    - azure.azcollection.azure_rm_subnet:
+        name: "{{ subnetfe_name }}"
+        virtual_network_name: "{{ vnet_name }}"
+        resource_group: "{{ rg_name }}"
+        address_prefix_cidr: "{{ address_prefix_cidr_subnetfe }}"
+
+    - azure.azcollection.azure_rm_securitygroup:
+        resource_group: "{{ rg_name }}"
+        name: "{{ nsg_web_name }}"
+        purge_rules: yes
+        rules:
+          - name: AllowHTTP
+            protocol: Tcp
+            destination_port_range: 80
+            access: Allow
+            priority: 110
+            direction: Inbound
+
+    - azure.azcollection.azure_rm_networkinterface:
+        name: "{{ nic_name_web }}"
+        resource_group: "{{ rg_name }}"
+        virtual_network: "{{ vnet_name }}"
+        subnet_name: "{{ subnetfe_name }}"
+        security_group: "{{ nsg_web_name }}"
+        ip_configurations:
+        - name: ipconfig1
+          public_ip_address_name: "{{ public_ip_web }}"
+          primary: True
+
+    - azure.azcollection.azure_rm_keyvaultsecret_info:
+        vault_uri: "https://{{ vault_name }}.vault.azure.net"
+        name: "{{ secret_name }}"            
+      register: sshkey
+
+    - azure.azcollection.azure_rm_virtualmachine:
+        name: "{{ vm_name_web }}"
+        resource_group: "{{ rg_name }}"
+        vm_size: "{{ vm_size }}"
+        managed_disk_type: "{{ vm_type_disk }}"
+        admin_username: "{{ admin_user_vm }}"
+        ssh_password_enabled: false
+        ssh_public_keys:
+        - path: "/home/{{ admin_user_vm }}/.ssh/authorized_keys"
+          key_data: "{{ sshkey['secrets'][0]['secret'] }}"
+        network_interfaces: "{{ nic_name_web }}"
+        image:
+          offer: "{{ offer_vm }}"
+          publisher: "{{ publisher_vm }}"
+          sku: "{{ sku_vm }}"
+          version: "{{ version_vm }}"
+      register: vm
+
+    - debug:
+        var: vm
+        

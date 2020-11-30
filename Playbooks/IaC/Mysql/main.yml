@@ -1,0 +1,29 @@
+# Création d'une Azure Database for MySQL
+---
+- name: Creation d'une Azure Database for MySQL
+  hosts: localhost
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ location }}"
+
+    - azure.azcollection.azure_rm_keyvaultsecret_info:
+        vault_uri: "https://{{ vault_name }}.vault.azure.net"
+        name: "{{ secret_name }}"            
+      register: password
+
+    - azure.azcollection.azure_rm_mysqlserver:
+        resource_group: "{{ rg_name }}"
+        name: "{{ mysqlserver_name }}"
+        sku:
+          name: "{{ sku_name }}"
+          tiers: "{{ sku_tiers}}"
+        location: "{{ location }}"
+        storage_mb: 5120
+        enforce_ssl: True
+        version: '5.6'
+        admin_username: "{{ admin_user }}"
+        admin_password: "{{ password['secrets'][0]['secret'] }}"

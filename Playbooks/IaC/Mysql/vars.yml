@@ -1,0 +1,8 @@
+rg_name: RG_MySQL
+location: westeurope
+mysqlserver_name: DBMySQL007
+sku_name: B_Gen5_1
+sku_tiers: Basic
+admin_user: pierrc
+secret_name: Pass00
+vault_name: KeyVaultPierrc

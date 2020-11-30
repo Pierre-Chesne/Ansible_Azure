@@ -1,0 +1,11 @@
+location: westeurope
+rg_name: RG_AKS_000
+vnet_name: Vnet_AKS_000
+subnet_name: Subnet_AKS_000
+subnet_name_vn: virtual-node-aci
+aks_name: AKS-000
+user_name: pierrc
+vault_name: KeyVaultPierrc
+ssh_secret_name: PublicKey
+spn_secret_name: secretspnPierrcAKS
+id_spn_aks: IDspnPierrcAKS

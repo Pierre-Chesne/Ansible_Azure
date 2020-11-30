@@ -1,0 +1,46 @@
+# Recuperation du secret cle publique  ssh dans un Azure Key vault
+- azure.azcollection.azure_rm_keyvaultsecret_info:
+    vault_uri: "https://{{ vault_name }}.vault.azure.net"
+    name: "{{ ssh_secret_name }}"            
+  register: sshkey
+
+# Recuperation de l'Application Id (spn) dans un Azure Key vault
+- azure.azcollection.azure_rm_keyvaultsecret_info:
+    vault_uri: "https://{{ vault_name }}.vault.azure.net"
+    name: "{{ id_spn_aks }}"            
+  register: idspnaks
+
+# Recuperation du secret Application Id (spn) dans un Azure Key vault
+- azure.azcollection.azure_rm_keyvaultsecret_info:
+    vault_uri: "https://{{ vault_name }}.vault.azure.net"
+    name: "{{ spn_secret_name }}"            
+  register: spnaks
+
+# Creation du cluster AKS
+- azure.azcollection.azure_rm_aks:
+    resource_group: "{{ rg_name }}"
+    name: "{{ aks_name }}"
+    dns_prefix: "{{ aks_name }}-dns"
+    kubernetes_version: 1.17.13
+    agent_pool_profiles:
+      - name: nodepool1
+        count: 3
+        vm_size: Standard_DS1_v2
+        enable_auto_scaling: True
+        type: VirtualMachineScaleSets
+        max_count: 3
+        min_count: 1
+        vnet_subnet_id: "{{ vnet_subnet_id }}"
+    linux_profile:
+      admin_username: "{{ user_name }}"
+      ssh_key: "{{ sshkey['secrets'][0]['secret'] }}"
+    service_principal:
+      client_id: "{{ idspnaks['secrets'][0]['secret'] }}"
+      client_secret: "{{ spnaks['secrets'][0]['secret'] }}"
+    network_profile:
+      network_plugin: azure
+      docker_bridge_cidr: 172.17.0.1/16
+      dns_service_ip: 10.0.0.10
+      service_cidr: 10.0.0.0/16
+    enable_rbac: yes
+  register: aks

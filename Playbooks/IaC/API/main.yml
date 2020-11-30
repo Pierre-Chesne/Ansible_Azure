@@ -1,0 +1,25 @@
+# Deploiement via les APIs REST Azure
+---
+- name: Deploiement d'un compte de stockage
+  hosts: localhost
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ location }}"
+
+    - azure.azcollection.azure_rm_resource:
+        api_version: "2017-10-01"
+        provider: "Storage"
+        resource_type: "storageAccounts"
+        resource_group: "{{ rg_name }}"
+        resource_name: "{{ storageAccount_name }}"
+        body:
+          location: "{{ location }}"
+          kind: "StorageV2"
+          sku:
+            name: "Standard_RAGRS"
+            tier: "Standard"
