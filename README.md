@@ -40,7 +40,7 @@ On retrouve toutes les informations pour l'écriture des "Playbooks" ici <a href
 Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe également dans le "marketplace" d'Azure des VM prêtes à l'emploi (Ubuntu Ansibe,RHL Ansible Tower, Ansible AWX, ...).<br/> Voici plusieurs scénarios où Ansible pourra grandemant vous faciliter la tâche dans les déploimments et les configurations.<br/>
 
 ### Ansible pour déployer des ressources dans Azure (IaC)<br/>
-Ce scénario un peu moins répandu du fait de la monté en puissance d'outils comme "Terraform", il est reste pertinent ...<br/>
+Ce scénario, un peu moins répandu du fait de la monté en puissance d'outils comme "Terraform", est pertinent ...<br/>
 Pour configurer le "control node" ou serveur Ansible (serveur local ou VM Azure) il faudra installer:<br/>
 - le gestionnaire de packets "python3-pip"<br/>
 -  Ansible<br/>
