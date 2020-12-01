@@ -25,7 +25,7 @@ Cette dernière s’appuie sur les composants:<br/>
 - <a href="https://www.redhat.com/cms/managed-files/ma-network-automation-for-everyone-e-book-f14954-201812-a4-fr.pdf">"Ansible Network Automation".</a><br/>
 - <a href="https://www.ansible.com/products/automation-analytics">"Automation Analytics".</a><br/></br>
 
-__Ansible__ présente de nombreuses qualités, sa plus grande, est sa facilité d'accès:<br/>
+__Ansible__ présente de nombreuses qualités, la plus interressante est sa grande facilité d'accès:<br/>
 - Le YAML, c'est lisible par l’homme et cela ne nécessite pas de   connaissance ou compétence particulier en codage.<br/>
 - Pas besoin d'agent à installer sur les serveurs cibles les configurations s'éxecutent en Python ou en PowerShell et on utilise OpenSSh et WinRM pour pousser les configurations.<br/>
 - Facile à prendre en main, on écrit les configuration en "mode déclaratif" et les "Playbooks" sont idempotents.<br/>
