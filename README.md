@@ -6,7 +6,7 @@
 Avant de parler d'Ansible dans un environnement Azure, voici une petite introduction. Ansible est une plate-forme pour la configuration et la gestion de multiples environements d'architectures. Ansible combine le déploiement de logiciels "multi-noeud", l'exécution de tâches ad-hoc et la gestion de configuration. C'est un produit open-source qui appartient à Red Hat depuis octobre 2015. <br/>
 
 L'achitecture Ansible s'appuie sur deux éléménts principaux:<br/>
-Le ___"control node"___ ou ___serveur Ansible___ peut être exécuté à partir des environnements Python 2 (vers 2.7) ou Python 3 (vers 3.5 +). Le "control node" Ansible s'exécute uniquement depuis d'un environnement Linux (Red Hat, Debian, CentOS, macOS, BSD, WSL ...). Les configurations appelées "Playbooks"sont écrites en YAML. L'écriture des "Playbooks" s'appuie soit sur des modules natifs à Ansible ou sur des modules contenu dans des collections (ex: Galaxy Collection Azure "azure.azcollection"). Les "playbooks" sont Ensuite envoyés en SSH/WinRM sur les machines cibles en s'appuyant sur un inventaire. <br/>
+Le ___"control node"___ ou ___serveur Ansible___ peut être exécuté à partir des environnements Python 2 (vers 2.7) ou Python 3 (vers 3.5 +). Le "control node" Ansible s'exécute uniquement depuis d'un environnement Linux (Red Hat, Debian, CentOS, macOS, BSD, WSL ...). Les configurations appelées "Playbooks"sont écrites en YAML. L'écriture des "Playbooks" s'appuie soit sur des modules natifs à Ansible ou sur des modules contenu dans des collections (ex: Galaxy Collection Azure "azure.azcollection"). Les "playbooks" sont ensuite envoyés en SSH/WinRM sur les machines cibles en s'appuyant sur un inventaire. <br/>
 
 Les ___"managed nodes"___ ou ___serveurs cibles___ peuvent être des environnements Linux ou Windows:<br/>
  -Pour les environnements Linux, les "playbooks" s'exécuteront en Python et seront récupérés en SSH.<br/>
@@ -27,11 +27,11 @@ Ansible présente de nombreuses qualités, sa plus grande, est sa facilité d'ac
 - Le YAML, c'est lisible par l’homme et cela ne nécessite pas de   connaissance ou compétence particulier en codage.<br/>
 - Pas besoin d'agent à installer sur les serveurs cibles les configurations s'éxecutent en Python ou en PowerShell et on utilise OpenSSh et WinRM pour pousser les configurations.<br/>
 - Facile à prendre en main, on écrit les configuration en "mode déclaratif" et les "Playbooks" sont idempotents.<br/>
-- Un grand nombre de  <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a> sont déjà disponibles quand on installe Ansible<br/>
+- Un grand nombre de  <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a> sont déjà disponibles quand on installe Ansible ensuite il existe un grand nombre de modules disponibes proposés par la communeauté Ansible sur <a href="https://galaxy.ansible.com/">"Ansible Galaxy".</a> (collections, roles ...) <br/>
 - Il est simple d'utiliser Ansible dans des chaînes de déploiement pour industrialiser les déploiements (pipeline, workflows, ...), il est présent par exemple des les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/>
 
 ## Ansible et Azure ##
-Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure, il est également présent dans le "Cloud Shell" d'Azure. Voici plusieurs scénarios ou Ansible pourra vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure<br/>
+Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe une VM . Voici plusieurs scénarios ou Ansible pourra vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure<br/>
 
 ### Ansible pour déployer des ressources dans Azure (IaC)<br/>
 On peut utiliser Ansible pour déployer des ressources dans Azure en "Infrastructure as Code". C'est un scénario un peu moins répandu du fait de la monté en puissance d'outils comme Terraform.<br/>
