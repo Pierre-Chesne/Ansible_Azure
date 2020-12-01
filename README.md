@@ -34,7 +34,7 @@ On retrouve toutes les informations pour l'écriture des "Playbooks" ici <a href
 
 
 ## Ansible et Azure ##
-Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe égalements dans le "marketplace" d'Azure des VM prêtes à l'emploi  . Voici plusieurs scénarios ou Ansible pourra vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure.<br/>
+Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe égalements dans le "marketplace" d'Azure des VM prêtes à l'emploi (Ubuntu Ansibe,RHL Ansible Tower, Ansible AWX, ...). Voici plusieurs scénarios ou Ansible pourra vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure.<br/>
 
 ### Ansible pour déployer des ressources dans Azure (IaC)<br/>
 On peut utiliser Ansible pour déployer des ressources dans Azure en mode "Infrastructure as Code". C'est un scénario un peu moins répandu du fait de la monté en puissance d'outils comme Terraform.<br/>
