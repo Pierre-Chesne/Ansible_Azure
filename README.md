@@ -54,8 +54,7 @@ Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ans
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/Mysql">Création d'une Azure Database for MySQL</a><br/>
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/AppService">Création d'une App Service</a><br/>
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/AKS">Création d'un cluster AKS</a><br/>
- On peut également appeler les APIs REST d'Azure depuis un "playbook" avec le module ``azure.azcollection.azure_rm_resource`` <br/>
- 
+ On peut également appeler les APIs REST d'Azure depuis un "playbook" avec le module ``azure.azcollection.azure_rm_resource`` <br/> 
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/API">Création de ressource Azure via les "Azure REST APIs"</a><br/> 
 
  ### Ansible sur un poste ou serveur "on-premise" ou dans une VM Azure<br/>
