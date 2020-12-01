@@ -57,7 +57,7 @@ Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ans
  On peut également appeler les APIs REST d'Azure depuis un "playbook" avec le module ``azure.azcollection.azure_rm_resource`` <br/> 
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/API">Création de ressource Azure via les "Azure REST APIs"</a><br/> 
 
- ### Ansible sur un poste ou serveur "on-premise" ou dans une VM Azure<br/>
+ ### Ansible pour des déployer et configurer vos infrastructures dans Azure<br/>
  Dans ce scénario on va utiliser Ansible pour gérer l'installation et la configuration des applications dans vos infrastructures Azure (Base de donnée, Serveur Web, CMS...).<br/> 
 Pour le faire cela nécessite plusieurs prérequis:<br/>
 -  Le serveur Ansible doit pouvoir pousser les configurations via des connexions en SSH. La configuration des clés SSH doit être faite. <a href="https://www.ssh.com/ssh/keygen/">"Voir cet Article".</a> <br/>
