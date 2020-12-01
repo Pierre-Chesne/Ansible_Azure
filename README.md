@@ -45,8 +45,9 @@ Pour configurer le "control node" ou serveur Ansible (serveur local ou VM Azure)
 - le gestionnaire de packets "python3-pip"<br/>
 -  Ansible<br/>
 -  les collections Azure (modules Azure). En effet depuis la version d'Ansible 2.10 les modules pour Azure sont séparés de la version Ansible de base.<br/>
--  Créer un "Service Principal" pour la connexion entre le serveur Ansible et l'abonnement Azure<br/> 
- Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation">  l'installation d'Ansible sur une distribution Linux Ubuntu 18.04 LTS avec un "Playbook" de création d'un "ressource groupe" </a>. <br/>
+-  Créer un "Service Principal" pour la connexion entre le serveur Ansible et l'abonnement Azure<br/>
+
+Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation">  l'installation d'Ansible sur une distribution Linux Ubuntu 18.04 LTS avec un "Playbook" de création d'un "ressource groupe" </a>. <br/>
  Voici d'autres exemples de déploiment :<br/>
  . <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/VM"> Création d'une VM </a><br/>
  . <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/VMSS"> Création d'un Scale Set de VM</a><br/>
