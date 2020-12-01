@@ -28,15 +28,7 @@ Ansible présente de nombreuses qualités, sa plus grande, est sa facilité d'ac
 - Pas besoin d'agent à installer sur les serveurs cibles les configurations s'éxecutent en Python ou en PowerShell et on utilise OpenSSh et WinRM pour pousser les configurations.<br/>
 - Facile à prendre en main, on écrit les configuration en "mode déclaratif" et les "Playbooks" sont idempotents.<br/>
 - Un grand nombre de  <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a> sont déjà disponibles quand on installe Ansible<br/>
-- Il est simple d'utiliser Ansible dans des chaînes de déploiement pour industrialiser les déploiements (pipeline, workflows, ...), il est présent par exemple des les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/> 
-
-
-
-
-
-
-
-
+- Il est simple d'utiliser Ansible dans des chaînes de déploiement pour industrialiser les déploiements (pipeline, workflows, ...), il est présent par exemple des les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/>
 ## Ansible et Azure
 Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure, il est également présent dans le "Cloud Shell" d'Azure. Voici plusieurs scénarios ou Ansible pourra vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure<br/>
 
