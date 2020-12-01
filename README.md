@@ -54,13 +54,14 @@ Pour configurer le "control node" ou serveur Ansible (serveur local ou VM Azure)
  . <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/API">Création de ressource Azure via les APIs</a><br/> 
 
  ### Ansible sur un poste ou serveur "on-premise" ou dans une VM Azure<br/>
- Dans ce scénario on peut utiliser Ansible pour installer et configurer les applications dans des infrastructures s'executant dans Azure (Base de donnée, Serveur Web, VM...).<br/>Pour pouvoir pousser les configurations aux hosts cibles il faut:<br/>
+ Dans ce scénario on va utiliser Ansible pour gérer l'installation et la configuration de vos applications dans vos infrastructures Azure (Base de donnée, Serveur Web, VM...). 
+<br/>Pour pouvoir pousser les configurations aux hosts cibles il faut:<br/>
  . Ecrire un "playbook"<br/>
  . Faire un inventaire (liste des hosts cibles)<br/>
  . Exécuter le "playbook" en s'appuyant sur l'inventaire.<br/>
  Pour pousser les "playbooks" sur les machines cibles, on utilise SSH, cela nécessite avoir tous les prérequis sur ces dernières (clés SSH et port TCP de connexion).<br/>  
 
-### - Ansible dans des chaînes de déploiement<br/>
+### Ansible dans des chaînes de déploiement<br/>
 
 
 
