@@ -29,7 +29,7 @@ Ansible présente de nombreuses qualités, sa plus grande, est sa facilité d'ac
 - Facile à prendre en main, on écrit les configuration en "mode déclaratif" et les "Playbooks" sont idempotents.<br/>
 - Un grand nombre de  <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a> sont déjà disponibles quand on installe Ansible ensuite il existe un grand nombre de modules disponibes proposés par la communeauté Ansible sur <a href="https://galaxy.ansible.com/">"Ansible Galaxy".</a> (collections, roles ...) <br/>
 - Il est simple d'utiliser Ansible dans des chaînes de déploiement pour industrialiser les déploiements (pipeline, workflows, ...), il est présent par exemple dans les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/><br/>
-On execute les "Playbooks" soit en "command line" ou soit GUI avec des solutions comme <a href="https://www.ansible.com/products/tower">"Ansible Tower"</a> (Red Hat) ou son pendant <a href="https://github.com/ansible/awx">"AWX".</a> (La version communeautaire de Ansible Tower)
+On execute les "Playbooks" soit en "command line" ou soit GUI avec des solutions comme <a href="https://www.ansible.com/products/tower">"Ansible Tower"</a> (Red Hat) ou son pendant <a href="https://github.com/ansible/awx">"AWX".</a> (La version communautaire de Ansible Tower)
 
 ## Ansible et Azure ##
 Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe une VM . Voici plusieurs scénarios ou Ansible pourra vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure<br/>
