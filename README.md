@@ -26,8 +26,8 @@ Cette dernière s’appuie sur les composants:<br/>
 - <a href="https://www.ansible.com/products/automation-analytics">"Automation Analytics".</a><br/></br>
 
 __Ansible__ présente de nombreuses qualités, la plus interressante est sa grande facilité d'accès:<br/>
-- Le YAML, est lisible par l’homme et ne nécessite donc pas de connaissance ou compétence particulier en codage.<br/>
-- Pas besoin d'agent à installer sur les serveurs cibles les configurations s'éxecutent en Python ou en PowerShell et on utilise OpenSSh et WinRM pour pousser les configurations.<br/>
+- Le YAML, est lisible par l’homme et ne nécessite donc pas de connaissances ou de compétences particulières en codage.<br/>
+- Pas besoin d'agent à installer sur les serveurs cibles, les configurations s'éxecutent en Python ou en PowerShell et on utilise OpenSSh et WinRM pour pousser les configurations.<br/>
 - Facile à prendre en main, on écrit les configuration en "mode déclaratif" et les "Playbooks" sont idempotents.<br/>
 - Un grand nombre de  <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a> sont déjà disponibles quand on installe Ansible ensuite il existe un grand nombre de modules disponibes proposés par la communeauté Ansible sur <a href="https://galaxy.ansible.com/">"Ansible Galaxy".</a> (collections, roles ...) <br/>
 - Il est simple d'utiliser Ansible dans des chaînes de déploiement pour industrialiser les déploiements (pipeline, workflows, ...), il est présent par exemple dans les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/><br/>
