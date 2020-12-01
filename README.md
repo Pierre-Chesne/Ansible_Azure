@@ -27,12 +27,14 @@ Ansible présente de nombreuses qualités, sa plus grande, est sa facilité d'ac
 - Le YAML, c'est lisible par l’homme et cela ne nécessite pas de   connaissance ou compétence particulier en codage.<br/>
 - Pas besoin d'agent à installer sur les serveurs cibles les configurations s'éxecutent en Python ou en PowerShell et on utilise OpenSSh et WinRM pour pousser les configurations.<br/>
 - Facile à prendre en main, on écrit les configuration en "mode déclaratif" et les "Playbooks" sont idempotents.<br/>
+- Un grand nombre de  <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a> sont déjà disponibles quand on installe Ansible<br/>
+- Il est simple d'utiliser Ansible dans des chaînes de déploiement (pipeline, workflows, ...) il est présent par exemple des les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/> 
 
 
 
- <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a><br/>
 
-Il est facile d'utiliser Ansible dans des chaines de déploiement (pipeline, workflows, ...) si l'on souhaite industrialiser des déploiements dans une approche DevOps. Il est présent dans les "runners dans le service Github Actions" ansi que des les "Agents Azure Devops"<br/>
+
+
 
 
 ## Ansible et Azure
