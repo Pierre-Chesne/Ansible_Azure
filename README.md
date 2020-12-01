@@ -30,7 +30,7 @@ __Ansible__ présente de nombreuses qualités, la plus interressante est sa gran
 - Pas besoin d'agent à installer sur les serveurs cibles, les configurations s'éxecutent en Python ou en PowerShell et on utilise OpenSSh et WinRM pour pousser les configurations.<br/>
 - Facile à prendre en main, on écrit les configurations en "mode déclaratif" et les "Playbooks" sont idempotents.<br/>
 - Un grand nombre de <a href="https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html"> modules </a> sont présents dans Ansible. On peut également trouver des modules supplémentaires proposés par la communeauté Ansible sur <a href="https://galaxy.ansible.com/">"Ansible Galaxy".</a> (collections, roles ...) <br/>
-- Il est simple d'utiliser Ansible dans des chaînes de déploiement pour industrialiser les déploiements (pipeline, workflows, ...), il est présent par exemple dans les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/><br/>
+- Ansible peut être également utilisé simplement dans des chaînes de déploiement (pipelines, workflows,...), il est présent par exemple dans les "runners de GitHub Actions" ou dans les "agents Azure Devops"<br/><br/>
 
 On execute les "Playbooks" soit en "command line" ou soit GUI avec des solutions comme <a href="https://www.ansible.com/products/tower">"Ansible Tower"</a> (Red Hat) ou son pendant <a href="https://github.com/ansible/awx">"AWX".</a> (La version communautaire de Ansible Tower).<br/>
 On retrouve toutes les informations pour l'écriture des "Playbooks" ici <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#playbook-syntax">  "Intro to playbooks"</a> et ici le <a href="https://docs.ansible.com/ansible/latest/user_guide/index.html">"User Guide".</a><br/>
