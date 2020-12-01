@@ -34,7 +34,7 @@ On retrouve toutes les informations pour l'écriture des "Playbooks" ici <a href
 
 
 ## Ansible et Azure ##
-Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe égalements dans le "marketplace" d'Azure des VM prêtes à l'emploi (Ubuntu Ansibe,RHL Ansible Tower, Ansible AWX, ...). Voici plusieurs scénarios ou Ansible pourra vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure.<br/>
+Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe égalements dans le "marketplace" d'Azure des VM prêtes à l'emploi (Ubuntu Ansibe,RHL Ansible Tower, Ansible AWX, ...). Voici plusieurs scénarios ou Ansible pourra grandemant vous faciliter la tâche dans les déploimments et les configurations de vos infrastructures dans Azure.<br/>
 
 ### Ansible pour déployer des ressources dans Azure (IaC)<br/>
 On peut utiliser Ansible pour déployer des ressources dans Azure en mode "Infrastructure as Code". C'est un scénario un peu moins répandu du fait de la monté en puissance d'outils comme Terraform.<br/>
@@ -43,7 +43,7 @@ Pour configurer le "control node" ou serveur Ansible (serveur local ou VM Azure)
 . Ansible<br/>
 . les collections Azure (modules Azure). En effet depuis la version d'Ansible 2.10 les modules pour Azure sont séparés de la version Ansible de base.<br/>
 . Créer un "Service Principal" pour la connexion entre le poste Ansible et l'abonnement Azure<br/> 
- <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation"> Voici une procédure pour l'installation pour une distribution Linux Ubuntu 18.04 LTS avec un test de création d'un "ressource groupe" </a> <br/>
+ Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation">  l'installation d'Ansible sur une distribution Linux Ubuntu 18.04 LTS avec un "Playbook" de création d'un "ressource groupe" </a>. <br/>
  Voici d'autres exemples de déploiment :<br/>
  . <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/VM"> Création d'une VM </a><br/>
  . <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/VMSS"> Création d'un Scale Set de VM</a><br/>
