@@ -59,8 +59,8 @@ Pour configurer le "control node" ou serveur Ansible (serveur local ou VM Azure)
  ### Ansible sur un poste ou serveur "on-premise" ou dans une VM Azure<br/>
  Dans ce scénario on va utiliser Ansible pour gérer l'installation et la configuration des applications dans vos infrastructures Azure (Base de donnée, Serveur Web, CMS...).<br/> 
 Pour le faire cela nécessite plusieurs prérequis:<br/>
--  Le serveur Ansible doit pouvoir pousser les configurations en SSH. La configuration des clés SSH doit être faire.<br/>
--  Faire un inventaire (liste des hosts cibles). L'inventaire est un élement essentiel pour appliquer les "Playbooks"<br/>
+-  Le serveur Ansible doit pouvoir pousser les configurations via des connexions en SSH. La configuration des clés SSH doit être faite. <a href="https://www.ssh.com/ssh/keygen/">"Voir cet Article".</a> <br/>
+-  Faire un inventaire (liste des hosts cibles). L'inventaire est un élement essentiel pour appliquer les "Playbooks" puisque que c'est dans ce dernier que l'on va renseigner les serveurs cibles.<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">"Article pour construire un inventaire".</a><br/>
 <br/>  
 
 ### Ansible dans des chaînes de déploiement<br/>
