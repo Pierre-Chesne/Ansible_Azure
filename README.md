@@ -6,9 +6,9 @@
 Avant de parler d'Ansible dans un environnement Azure, voici une petite introduction. Ansible est une plate-forme pour la configuration et la gestion de multiples environements d'architectures. Ansible combine le déploiement de logiciels "multi-noeud", l'exécution de tâches ad-hoc et la gestion de configuration. C'est un produit open-source qui appartient à Red Hat depuis octobre 2015. <br/>
 
 L'achitecture Ansible s'appuie sur deux éléménts principaux:<br/>
-- Le ___"control node"___ ou ___serveur Ansible___ peut être exécuté à partir des environnements Python 2 (vers 2.7) ou Python 3 (vers 3.5 +). Le "control node" Ansible s'exécute uniquement depuis d'un environnement Linux (Red Hat, Debian, CentOS, macOS, BSD, WSL ...). Les configurations appelées "Playbooks"sont écrites en YAML. L'écriture des "Playbooks" s'appuie soit sur des modules natifs à Ansible ou sur des modules contenu dans des collections (ex: Galaxy Collection Azure "azure.azcollection"). Les "playbooks" sont ensuite envoyés en SSH/WinRM sur les machines cibles en s'appuyant sur un inventaire. <br/>
+- Le ___"control node"___ ou ___serveur Ansible___, il peut être exécuté à partir des environnements Python 2 (vers 2.7) ou Python 3 (vers 3.5 +). Le "control node" Ansible s'exécute uniquement depuis d'un environnement Linux (Red Hat, Debian, CentOS, macOS, BSD, WSL ...). Les configurations appelées "Playbooks"sont écrites en YAML. L'écriture des "Playbooks" s'appuie soit sur des modules natifs à Ansible ou sur des modules contenus dans des collections (ex: Galaxy Collection Azure "azure.azcollection"). Les "playbooks" sont ensuite envoyés en SSH/WinRM sur les machines cibles en s'appuyant sur un inventaire. <br/>
 
-- Les ___"managed nodes"___ ou ___serveurs cibles___ peuvent être des environnements Linux ou Windows:<br/>
+- Les ___"managed nodes"___ ou ___serveurs cibles___, ils peuvent être des environnements Linux ou Windows:<br/>
  -- Pour les environnements Linux, les "playbooks" s'exécuteront en Python et seront récupérés en SSH.<br/>
  -- Pour les environement Windows, les "playbooks" s'exécuteront en PowerShell et seront récupérés en WinRM ou SSH (SSH disponible dans Windows Server 2019).<br/>
 
