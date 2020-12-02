@@ -58,7 +58,7 @@ Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ans
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/API">Création de ressource Azure via les "Azure REST APIs"</a><br/> 
 
  ### Ansible pour des déployer et configurer vos infrastructures dans Azure<br/>
-Dans ce scénario on va utiliser Ansible pour gérer l'installation et la configuration des applications (Base de donnée, Serveur Web, CMS...).<br/> 
+Dans ce scénario on va utiliser Ansible depuis un poste "on-premise" ou depuis une VM dans Azure pour gérer l'installation et la configuration des applications (Base de donnée, Serveur Web, CMS...).<br/> 
 Pour le faire, cela nécessite plusieurs prérequis:<br/>
 -  Le serveur Ansible doit pouvoir pousser les configurations aux serveurs cibles via des connexions en SSH. La configuration des clés SSH doit être faite. <a href="https://www.ssh.com/ssh/keygen/">"Voir cet Article".</a> <br/>
 -  Faire un inventaire (liste des hosts cibles). L'inventaire est un élement essentiel pour appliquer les "Playbooks" puisque que c'est dans ce dernier que l'on va renseigner les serveurs cibles.<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">"Article pour construire un inventaire".</a><br/>
