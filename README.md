@@ -100,7 +100,17 @@ Résultat:
   |--@webservers:
   |  |--20.71.44.177
 ```
- et vérifier la connexion entre le serveur Ansible et les cibles voici deux 
+ Pour tester la connexion entre le serveur Ansible:<br/>
+```
+ansible -i hosts.yml webservers -m ping
+```
+Résultat:
+```
+20.71.44.177 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+```
 <br/>  
 
 
