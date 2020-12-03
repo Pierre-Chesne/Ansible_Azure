@@ -100,7 +100,7 @@ Résultat:
   |--@webservers:
   |  |--20.71.44.177
 ```
- Pour tester la connexion entre le serveur Ansible:<br/>
+ Pour tester la connexion entre le serveur Ansible et les serveurs cibles:<br/>
 ```
 ansible -i hosts.yml webservers -m ping
 ```
