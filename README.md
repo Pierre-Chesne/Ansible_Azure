@@ -64,7 +64,7 @@ Pour le faire, cela nécessite plusieurs prérequis:<br/>
 -  Faire un inventaire (liste des hosts cibles). L'inventaire est un élement essentiel pour appliquer les "Playbooks" puisque que c'est dans ce dernier que l'on va renseigner les serveurs cibles.<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">"Article pour construire un inventaire".</a><br/>
 
 Dans un environnement, Azure pour utiliser Ansible, il y a deux possibilés pour faire cet inventaire: Un inventaire __"Static"__ ou un inventaire __"Dynanic"__:<br/>
- __Inventaire "Static"__<br/>
+ - __Inventaire "Static"__<br/>
  Exemple d'un inventaire "Static" en YAML avec une variable d'inventaire (on utilisera python3 pour executer les configurations). On renseigne manuellement les IPs ou les noms d'hôtes.
 ```
 ---
