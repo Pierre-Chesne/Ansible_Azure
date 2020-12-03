@@ -138,7 +138,7 @@ Résultat:<br/>
   |  |--VM-Front_e9e9
   |--@ungrouped:
 ```
-Dans cet inventaire, on récupère deux VM dans le ressource groupe "RG-Appli-01". L'une avec un Tag Azure "Appli_01 : Front" et l'autre avec un Tag "Appli_01:Back"<br/>
+Dans cet inventaire, on récupère deux VM dans le "ressource groupe" "RG-Appli-01". L'une avec un Tag Azure "Appli_01 : Front" et l'autre avec un Tag "Appli_01:Back"<br/>
 Pour tester les connexions entre le serveur Ansible et les deux VM dans Azure:<br/>
 ```
 ansible -i monazure_rm.yml all -m ping
@@ -160,7 +160,20 @@ VM-Front_e9e9 | SUCCESS => {
     "ping": "pong"
 }
 ```
-
+Pour tester la connexion entre le serveur Ansible et une VM du "ressource groupe", on s'appuie sur les tags Azure<br/>
+```
+ansible -i monazure_rm.yml -m ping tag_Appli_01_Back
+```
+Résultat:<br/>
+```
+VM-Back_19d1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
 <br/>  
 
 
