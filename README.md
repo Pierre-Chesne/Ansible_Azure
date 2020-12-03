@@ -39,7 +39,7 @@ On retrouve toutes les informations pour l'écriture des "Playbooks" ici <a href
 ## Ansible et Azure ##
 Ansible est une excellente solution pour déployer et configurer des infrastructures dans Azure. Il est présent dans le "Cloud Shell" d'Azure et il existe également dans le "marketplace" d'Azure des VM prêtes à l'emploi (Ubuntu Ansibe,RHL Ansible Tower, Ansible AWX, ...).<br/> Voici plusieurs scénarios où Ansible pourra grandemant vous faciliter la tâche dans les déploimments et les configurations.<br/>
 
-### Ansible pour déployer des ressources dans Azure (IaC)<br/>
+### Scénario 1: "Ansible pour déployer des ressources dans Azure (IaC)"<br/>
 Ce scénario, un peu moins répandu du fait de la monté en puissance d'outils comme "Terraform", est pertinent ...<br/>
 Pour configurer le "control node" ou serveur Ansible (serveur local ou VM Azure) il faudra installer:<br/>
 - le gestionnaire de packets "python3-pip"<br/>
@@ -57,7 +57,7 @@ Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ans
  On peut également appeler les APIs REST d'Azure depuis un "playbook" avec le module ``azure.azcollection.azure_rm_resource`` <br/> 
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/API">Création de ressource Azure via les "Azure REST APIs"</a><br/> 
 
- ### Ansible pour des déployer et configurer vos infrastructures dans Azure<br/>
+ ### Scénario 2: Ansible pour des déployer et configurer vos infrastructures dans Azure<br/>
 Dans ce scénario on va utiliser Ansible depuis un poste "on-premise" ou depuis une VM dans Azure pour gérer l'installation et la configuration des applications (Base de donnée dans les VMs, Serveur Web dans les VM/VMSS, CMS...).<br/> 
 Pour le faire, cela nécessite plusieurs prérequis:<br/>
 -  Le serveur Ansible doit pouvoir pousser les configurations aux serveurs cibles via des connexions en SSH. La configuration des clés SSH doit être faite. <a href="https://www.ssh.com/ssh/keygen/">"Voir cet Article"</a>. Et les VM dans Azure doivent pouvoir être jointe en SSH (NSG TCP 22) <br/>
