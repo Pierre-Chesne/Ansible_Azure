@@ -125,6 +125,21 @@ keyed_groups:
 - prefix: tag
   key: tags
 ```
+Pour tester l'inventaire :<br/>
+```
+ansible-inventory -i monazure_rm.yml --graph
+```
+Résultat:<br/>
+```
+@all:
+  |--@tag_Appli_01_Back:
+  |  |--VM-Back_19d1
+  |--@tag_Appli_01_Front:
+  |  |--VM-Front_e9e9
+  |--@ungrouped:
+```
+Dans cet inventaire, on récupère deux VM dans le ressource groupe "RG-Appli-01". L'une avec un Tag Azure "Front" et l'autre avec un Tag "Back"<br/>
+
 <br/>  
 
 
