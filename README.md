@@ -112,7 +112,19 @@ Résultat:
 }
 ```
 - __Inventaire "Dynamic"__<br/>
-Ansible peut être utilisé pour récupérer des informations pour construire un inventaire de diverses sources (y compris des sources d'Azure). Grâce au plugin "azure_rm" on va pouvoir construire un inventaire "dynamic" à partir de ressources Azure comme un "ressource group" par exemple. Plus besoin de renseigner les IPs ou les noms d'hôtes dans l'inventaire. 
+Ansible peut être utilisé pour récupérer des informations pour construire un inventaire de diverses sources (y compris des sources d'Azure). Grâce au plugin "azure_rm" on va pouvoir construire un inventaire "dynamic" à partir de ressources Azure comme un "ressource group" par exemple. Plus besoin de renseigner les IPs ou les noms d'hôtes dans l'inventaire.<br/>
+Exemple:<br/>
+```
+---
+plugin: azure_rm
+include_vm_resource_groups:
+- RG-Appli-01
+auth_source: auto
+
+keyed_groups:
+- prefix: tag
+  key: tags
+```
 <br/>  
 
 

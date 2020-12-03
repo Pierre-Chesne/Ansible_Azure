@@ -1,0 +1,9 @@
+---
+plugin: azure_rm
+include_vm_resource_groups:
+- RG-Appli-01
+auth_source: auto
+
+keyed_groups:
+- prefix: tag
+  key: tags
