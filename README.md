@@ -174,6 +174,10 @@ VM-Back_19d1 | SUCCESS => {
     "ping": "pong"
 }
 ```
+Maintenant que l'on a construit un inventaire, reste plus à __exécuter les "Playbooks"__. Il y a deux approches pour le faire dans une infrastructure Azure:<br/>
+__Première approche__ La plus simple, on pousse les configurations depuis un serveur en dehors d'Azure mais cela veut dire que pour pousser les configurations les serveurs cibles doivent avoir une IP publique et autoriser les flux entrants sur le port TCP 22 ce qui est discutable au point de vu sécurité.<br/>
+__Deuxième approche__ on pousse les configurations depuis une VM dans Azure au plus près des serveurs cibles mais cela nécessite un peu plus de configuration et de preparation.<br/> 
+
 <br/>  
 
 
