@@ -84,7 +84,7 @@ all:
         three.example.com: 
 
 ```
-Pour tester l'inventaire avec la commande ``ansible-inventory`` :<br/>
+Pour tester l'inventaire avec la commande ``ansible-inventory`` (``ansible-inventory -i [inventaire] --graph``) :<br/>
 ```
 ansible-inventory -i hosts.yml --graph
 ```
