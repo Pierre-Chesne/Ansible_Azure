@@ -11,17 +11,15 @@
         upgrade: dist
         force_apt_get: yes
 
-    - name: installation de Nginx
-      apt: 
-        name: nginx
-        state: present
-        force_apt_get: yes
-          
-    - name: Permission sur le repertoire /var/www/html  
-      file:
-        path: /var/www/html
-        mode: '0755'
 
-    - name: Indentifie les serveurs
-      shell:
-        printf '<html><body><h1>'$(hostname)'</h1></body></html>' >> index.html; sudo cp index.html /var/www/html/ 
+- hosts: dbservers
+  remote_user: pierrc
+  become: yes
+
+  tasks:
+
+    - name: mise à jour
+      apt:
+        update_cache: yes
+        upgrade: dist
+        force_apt_get: yes

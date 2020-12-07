@@ -84,7 +84,7 @@ all:
         three.example.com: 
 
 ```
-Pour tester l'inventaire :<br/>
+Pour tester l'inventaire avec la commande ``ansible-inventory`` :<br/>
 ```
 ansible-inventory -i hosts.yml --graph
 ```
@@ -100,7 +100,7 @@ Résultat:
   |--@webservers:
   |  |--20.71.44.177
 ```
- Pour tester la connexion entre le serveur Ansible et les serveurs cibles:<br/>
+ Pour tester la connexion entre le serveur Ansible et les serveurs cibles avec la command "ad-hoc" ansible qui appele le module "ping" :<br/>
 ```
 ansible -i hosts.yml webservers -m ping
 ```
