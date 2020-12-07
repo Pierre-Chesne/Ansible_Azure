@@ -178,6 +178,7 @@ Maintenant que l'on a construit un inventaire, reste plus à __exécuter les "Pl
 __Première approche__, la plus simple, on pousse les configurations depuis un serveur en dehors d'Azure mais cela veut dire que pour pousser les configurations sur les serveurs cibles, ces derniers doivent avoir une IP publique et autoriser les flux entrants sur le port TCP 22. Mais cela reste discutable au point de vu sécurité.<br/>
 __Deuxième approche__, on pousse les configurations depuis une VM dans Azure au plus près des serveurs cibles mais cela nécessite un peu plus de configuration et de préparation.<br/> 
 
+## Scénario 3: Ansible dans des chaînes de déploiement<br/>
 <br/>  
 
 
