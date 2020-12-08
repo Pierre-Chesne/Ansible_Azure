@@ -13,6 +13,15 @@ Exemple pour récupérer les tags Azure des VM de l'inventaire "dynamic" :
 ```
 ansible-inventory -i mon_inventaire_azure_rm.yml --graph
 ```
+Exemple de résultat :<br/>
+```
+@all:
+  |--@tag_appli_01_wp:
+  |  |--Vm-Host_9daf
+  |--@tag_appli_02_DB:
+  |  |--VM-DB-00_6422
+  |--@ungrouped:
+```
 Exemple pour exécuter le "playbook" à une VM d'un "resource group" en passant par les "tags" Azure
 ```
 ansible-playbook -i mon_inventaire_azure_rm.yml main.yml --limit=tag_appli_01_wp
