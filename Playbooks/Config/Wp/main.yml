@@ -63,9 +63,4 @@
     - name: docker-compose du wordpress
       shell: docker-compose up -d
       args:
-        chdir: /home/{{user}}/wordpress/
-    
-
-        
-      
-       
+        chdir: /home/{{user}}/wordpress/       
