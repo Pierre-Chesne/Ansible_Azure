@@ -2,7 +2,17 @@
 Prérequis :<br/>
 - Une VM Ubuntu 18.04LTS déployée dans Azure
 - NSG avec un accès TCP 22 (ssh)
-- Renseigner le nom du "resource group" dans l'inventaire "dynamic" (mon_inventaire_azure_rm.yml)  
+- Renseigner le nom du "resource group" dans l'inventaire "dynamic" (mon_inventaire_azure_rm.yml)
+
+Voici les actions du "playbook":<br/>
+- Mise à jour de la VM Ubuntu -> Module Ansible "apt"
+- Installation des dépendances pour l'installation de "Docker" -> Module Ansible "apt"
+- Ajout du "répository" -> Module Ansible "apt_repository"
+- Installation de Docker -> Module Ansible "apt"
+- Installation de "docker-compose" -> Module Ansible "apt"
+- Creation du repertoire "wordpress" -> Module Ansible "file"
+- Copie du fichier docker-compose.yml -> Module Ansible "copy"
+- Exécution du "docker compose" -> Module Ansible "shell"
 
 Exécution du playbook :<br/>
 ```
