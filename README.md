@@ -178,7 +178,7 @@ VM-Back_19d1 | SUCCESS => {
 ```
 Maintenant que l'inventaire "static" ou dynamic" est construit, il ne reste plus qu'à __exécuter les "Playbooks"__, deux approches sont possibles dans une infrastructure Azure:<br/>
 __Première approche__, la plus simple mais la moins sécurisée, on pousse les configurations depuis un seveur Ansible hors Azure (On-Premise ou autres) sur des serveurs cibles qui s'exécutent dans Azure. Dans cette approche, on utilise une connexion SSH via Internet avec des IP publiques et des NSG autorisant les flux "TCP22" entrants.<br/>
-__Deuxième approche__, on pousse les configurations depuis une VM dans Azure au plus près des serveurs cibles mais cela nécessite un peu plus de configuration et de préparation. Dans ce scénario on peut automatiser l'installation d'une VM Linux avec Ansible dans un subnet au sein d'un Vent des serveurs cibles par exemple.<br/> 
+__Deuxième approche__, on pousse les configurations depuis une VM dans Azure au plus près des serveurs cibles, cela nécessite un peu plus de configuration et de préparation. Dans ce scénario on peut automatiser l'installation d'une VM Linux avec Ansible dans un "subnet" au sein d'un "vnet" des serveurs cibles.<br/> 
 
 ## Scénario 3: Ansible dans des chaînes de déploiement<br/>
 <br/>  
