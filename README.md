@@ -65,7 +65,7 @@ Cela nécessite plusieurs prérequis:<br/>
 
 Il y a deux possibilés pour faire cet inventaire: Un inventaire __"Static"__ ou un inventaire __"Dynamic"__:<br/>
  - __Inventaire "Static"__<br/>
- Exemple d'un inventaire "Static" en YAML avec une variable d'inventaire (on utilisera python3 pour executer les configurations). On renseigne manuellement les IPs ou les noms d'hôtes.
+ Exemple d'un inventaire "Static" en YAML avec une variable d'inventaire (on utilisera python3 pour executer les "playbooks"). On renseigne manuellement les IPs ou les noms d'hôtes.
 ```
 ---
 all:
