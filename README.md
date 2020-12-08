@@ -63,7 +63,7 @@ Cela nécessite plusieurs prérequis:<br/>
 -  Le serveur Ansible doit pouvoir pousser les configurations vers les serveurs cibles via des connexions en SSH. La configuration des clés SSH doit être faite( <a href="https://www.ssh.com/ssh/keygen/">"Voir cet Article"</a>). Enfin les VM dans Azure doivent pouvoir être accesssibles en SSH (NSG TCP 22) <br/>
 -  Etablir un inventaire (liste des hosts cibles). L'inventaire est un élement essentiel pour appliquer les "Playbooks", car c'est à l'aide de cet inventaire que l'on renseigne les serveurs cibles.<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">"Article pour construire un inventaire".</a><br/>
 
-Dans un environnement, Azure pour utiliser Ansible, il y a deux possibilés pour faire cet inventaire: Un inventaire __"Static"__ ou un inventaire __"Dynanic"__:<br/>
+Il y a deux possibilés pour faire cet inventaire: Un inventaire __"Static"__ ou un inventaire __"Dynanic"__:<br/>
  - __Inventaire "Static"__<br/>
  Exemple d'un inventaire "Static" en YAML avec une variable d'inventaire (on utilisera python3 pour executer les configurations). On renseigne manuellement les IPs ou les noms d'hôtes.
 ```
