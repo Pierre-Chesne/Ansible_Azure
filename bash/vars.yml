@@ -1,8 +1,0 @@
-rg_name: RG_Playbook
-location: westeurope
-public_ip_Ansible: IP-Pub-Playbook
-allocation_method: dynamic
-nsg_ssh_name: Nsg-SSH
-nic_name_Ansible: Nic-Ansible
-vnet_name: Vnet_VM_Hosts
-subnet_name: Subnet_VM_Hosts
