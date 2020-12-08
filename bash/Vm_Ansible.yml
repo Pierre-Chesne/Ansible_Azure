@@ -1,0 +1,59 @@
+# Installation d'une VM Linux avec Ansible
+---
+- name: Creation d'une VM
+  hosts: localhost
+  vars_files:
+    - vars.yml
+
+  tasks:
+    # Creation du "ressource groupe"
+    - azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ location }}"
+    # Création IP Publique    
+    - azure.azcollection.azure_rm_publicipaddress:
+        resource_group: "{{ rg_name }}"
+        name: "{{ public_ip_Ansible }}"
+        allocation_method: "{{ allocation_method }}"
+    # Création de la NSH    
+    - azure.azcollection.azure_rm_securitygroup:
+        resource_group: "{{ rg_name }}"
+        name: "{{ nsg_ssh_name }}"
+        purge_rules: yes
+        rules:
+          - name: AllowSSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Allow
+            priority: 110
+            direction: Inbound
+
+    
+    - azure.azcollection.azure_rm_virtualnetwork:
+        name: "Vnet_VM_Hosts"
+        resource_group: "RG_VM_Hosts"
+      register: vnet
+
+    - azure.azcollection.azure_rm_subnet:
+        name: "Subnet_VM_Hosts"
+        virtual_network_name: "Vnet_VM_Hosts"
+        resource_group: "RG_VM_Hosts"
+      register: subnet
+
+    - azure.azcollection.azure_rm_networkinterface:
+        name: "{{ nic_name_Ansible }}"
+        resource_group: "{{ rg_name }}"
+        virtual_network: "{{ vnet.state.id }}"
+        subnet_name: "{{ subnet.state.id }}"
+        security_group: "{{ nsg_ssh_name }}"
+        ip_configurations:
+        - name: ipconfig1
+          public_ip_address_name: "{{ public_ip_Ansible }}"
+          primary: True
+
+
+      
+        
+
+    
+    

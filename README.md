@@ -57,11 +57,11 @@ Voici un exemple de procédure pour<a href="https://github.com/Pierre-Chesne/Ans
  On peut également appeler les APIs REST d'Azure depuis un "playbook" avec le module ``azure.azcollection.azure_rm_resource`` <br/> 
  - <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/IaC/API">Création de ressource Azure via les "Azure REST APIs"</a><br/> 
 
- ## Scénario 2: Ansible pour des déployer et configurer vos applications dans Azure<br/>
-Dans ce scénario on va utiliser Ansible depuis un poste "on-premise" ou depuis une VM dans Azure pour gérer l'installation et la configuration des applications (Base de donnée dans les VMs, Serveur Web dans les VM/VMSS, CMS...).<br/> 
-Pour le faire, cela nécessite plusieurs prérequis:<br/>
--  Le serveur Ansible doit pouvoir pousser les configurations aux serveurs cibles via des connexions en SSH. La configuration des clés SSH doit être faite. <a href="https://www.ssh.com/ssh/keygen/">"Voir cet Article"</a>. Et les VM dans Azure doivent pouvoir être jointe en SSH (NSG TCP 22) <br/>
--  Faire un inventaire (liste des hosts cibles). L'inventaire est un élement essentiel pour appliquer les "Playbooks" puisque que c'est dans ce dernier que l'on va renseigner les serveurs cibles.<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">"Article pour construire un inventaire".</a><br/>
+ ## Scénario 2: Ansible pour déployer et configurer vos applications dans Azure<br/>
+Dans ce scénario on va utiliser Ansible depuis un poste "on-premise" ou depuis une VM dans Azure pour gérer l'installation et la configuration des applications (Base de données dans les VMs, Serveur Web dans les VM/VMSS, CMS...).<br/> 
+Cela nécessite plusieurs prérequis:<br/>
+-  Le serveur Ansible doit pouvoir pousser les configurations vers les serveurs cibles via des connexions en SSH. La configuration des clés SSH doit être faite( <a href="https://www.ssh.com/ssh/keygen/">"Voir cet Article"</a>). Enfin les VM dans Azure doivent pouvoir être accesssibles en SSH (NSG TCP 22) <br/>
+-  Etablir un inventaire (liste des hosts cibles). L'inventaire est un élement essentiel pour appliquer les "Playbooks", c'est à l'aide de cet inventaire que l'on renseigne les serveurs cibles.<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">"Article pour construire un inventaire".</a><br/>
 
 Dans un environnement, Azure pour utiliser Ansible, il y a deux possibilés pour faire cet inventaire: Un inventaire __"Static"__ ou un inventaire __"Dynanic"__:<br/>
  - __Inventaire "Static"__<br/>
