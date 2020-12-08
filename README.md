@@ -176,7 +176,7 @@ VM-Back_19d1 | SUCCESS => {
     "ping": "pong"
 }
 ```
-Maintenant l'inventaire "static" ou dynamic" est construit, il ne reste plus qu'à __exécuter les "Playbooks"__, deux approche sont possibles dans une infrastructure Azure:<br/>
+Maintenant que l'inventaire "static" ou dynamic" est construit, il ne reste plus qu'à __exécuter les "Playbooks"__, deux approche sont possibles dans une infrastructure Azure:<br/>
 __Première approche__, la plus simple, on pousse les configurations depuis un serveur en dehors d'Azure mais cela veut dire que pour pousser les configurations sur les serveurs cibles, ces derniers doivent avoir une IP publique et autoriser les flux entrants sur le port TCP 22. Cela reste discutable au point de vu sécurité.<br/>
 __Deuxième approche__, on pousse les configurations depuis une VM dans Azure au plus près des serveurs cibles mais cela nécessite un peu plus de configuration et de préparation. Dans ce scénario on peut automatiser l'installation d'une VM Linux avec Ansible dans un subnet au sein d'un Vent des serveurs cibles par exemple.<br/> 
 
