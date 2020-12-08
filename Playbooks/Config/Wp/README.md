@@ -8,7 +8,7 @@ Exécution du playbook :<br/>
 ```
 ansible-playbook -i mon_inventaire_azure_rm.yml main.yml
 ```
-S'il y a plusieurs VM dans le "resource group", il y a possibilité d'appliquer le "playbook" à qu'une VM de l'inventaire en passant par les "tags" Azure<br/>
+S'il y a plusieurs VM dans le "resource group", il y a possibilité d'appliquer le "playbook" à qu'une VM de l'inventaire en passant par les "tags" Azure.<br/>
 Exemple pour récupérer les tags Azure des VM de l'inventaire "dynamic" :
 ```
 ansible-inventory -i mon_inventaire_azure_rm.yml --graph
