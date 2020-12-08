@@ -100,7 +100,7 @@ Résultat:
   |--@webservers:
   |  |--20.71.44.177
 ```
- Pour tester la connexion entre le serveur Ansible et les serveurs cibles, on peut utiliser la commande "ad-hoc" qui appelle le module "ping" (``ansible -i [inventaire] -m ping`` ) :<br/>
+ Pour tester la connexion entre le serveur Ansible et les serveurs cibles, utiliser la commande "ad-hoc" qui appelle le module "ping" (``ansible -i [inventaire] -m ping`` ) :<br/>
 ```
 ansible -i hosts.yml webservers -m ping
 ```
