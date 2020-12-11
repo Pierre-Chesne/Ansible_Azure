@@ -6,11 +6,12 @@
     - vars.yml
 
   tasks:
-    
+    # Creation du "resource group"
     - azure.azcollection.azure_rm_resourcegroup:
         name: "{{ rg_name }}"
         location: "{{ location }}"
 
+    # Creation du "Network Security Group"
     - azure.azcollection.azure_rm_securitygroup:
         resource_group: "{{ rg_name }}"
         name: "{{ nsg_ssh_name }}"
@@ -26,13 +27,15 @@
             destination_port_range: 80
             access: Allow
             priority: 1011
-            direction: Inbound                
-    
+            direction: Inbound
+
+    # Creation du "Virtual Network"
     - azure.azcollection.azure_rm_virtualnetwork:
         resource_group: "{{ rg_name }}"
         name: "{{ vnet_name }}"
         address_prefixes: "{{ address_prefixes_cidr_vnet }}"
 
+    # Creation du "Subnet"
     - azure.azcollection.azure_rm_subnet:
         resource_group: "{{ rg_name }}"
         name: "{{ subnet_name }}"
@@ -40,11 +43,13 @@
         virtual_network: "{{ vnet_name }}"
         security_group: "{{ nsg_ssh_name }}"
 
+    # Creation du "Public IP"
     - azure.azcollection.azure_rm_publicipaddress:
         resource_group: "{{ rg_name }}"
         allocation_method: Static
         name: "{{ public_ip_web }}"
 
+    # Creation du "Load Balancer"
     - azure.azcollection.azure_rm_loadbalancer:
         resource_group: "{{ rg_name }}"
         name: "{{ vmss_lb_name }}"
@@ -62,13 +67,16 @@
             backend_address_pool: backendaddrpool0
             frontend_port: 80
             backend_port: 80           
-            probe: prob0  
-    
+            probe: prob0
+
+    # Récupération de la clée publique SSH dans le  "Key Vault" 
     - azure.azcollection.azure_rm_keyvaultsecret_info:
         vault_uri: "https://{{ vault_name }}.vault.azure.net"
         name: "{{ secret_name }}"            
       register: sshkey
 
+
+    # Création du VM Scalset 
     - azure.azcollection.azure_rm_virtualmachinescaleset:
         resource_group: "{{ rg_name }}"
         name: "{{ vmss_name }}"
