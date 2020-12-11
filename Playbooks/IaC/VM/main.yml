@@ -36,16 +36,17 @@
         name: "{{ nsg_web_name }}"
         purge_rules: yes
         rules:
-          - name: AllowHTTP
+          - name: Allow_HTTP
             protocol: Tcp
             destination_port_range: 80
             access: Allow
             priority: 110
             direction: Inbound
           
-          - name: AllowSSH
+          - name: Allow_SSH
             protocol: Tcp
             destination_port_range: 22
+            #source_address_prefix: VirtualNetwork
             access: Allow
             priority: 120
             direction: Inbound
