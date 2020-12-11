@@ -47,7 +47,7 @@
             protocol: Tcp
             destination_port_range: 22
             access: Allow
-            priority: 110
+            priority: 120
             direction: Inbound
 
     #Creation de la "NIC" 
