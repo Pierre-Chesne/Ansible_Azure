@@ -50,7 +50,7 @@
             priority: 110
             direction: Inbound
 
-    #Creation du "NIC" 
+    #Creation de la "NIC" 
     - azure.azcollection.azure_rm_networkinterface:
         name: "{{ nic_name_web }}"
         resource_group: "{{ rg_name }}"
