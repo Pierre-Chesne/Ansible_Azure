@@ -6,5 +6,5 @@ Le playbook déploie:<br/>
 - Un "Subnet"
 - Un "Network Security Group" avec les règles (Http;SSH)
 - Une "NIC"
-- Une VM
+- Une VM<br/>
 Pour les paramétrages du déploiement voir le fichier ```vars.yml```
