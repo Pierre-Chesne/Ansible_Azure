@@ -1,4 +1,4 @@
-#Variables
+# Variables
 rg_name: RG_VM_Hosts
 location: westeurope
 public_ip_web: IP-Pub
