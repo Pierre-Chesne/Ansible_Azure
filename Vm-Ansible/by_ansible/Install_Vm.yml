@@ -1,0 +1,73 @@
+# Installation d'une VM Ansible
+---
+- name: Creation d'une VM
+  hosts: localhost
+  vars_files:
+    - vars.yml
+
+  tasks:
+    # Creation du "resource groupe"
+    - azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ rg_name_Ansible }}"
+        location: "{{ location }}"
+    
+    # Création IP Publique VM Ansible    
+    - azure.azcollection.azure_rm_publicipaddress:
+        resource_group: "{{ rg_name_Ansible }}"
+        name: "{{ public_ip_Ansible }}"
+        allocation_method: "{{ allocation_method }}"
+
+    # Création NSG VM Ansible (nic)
+    - azure.azcollection.azure_rm_securitygroup:
+        resource_group: "{{ rg_name_Ansible }}"
+        name: "{{ nsg_name_Ansible }}"
+        purge_rules: yes
+        rules:
+          - name: AllowSSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Allow
+            priority: 110
+            direction: Inbound    
+
+    # Creation de la NIC VM Ansible    
+    - azure.azcollection.azure_rm_networkinterface:
+        name: "{{ nic_name_Ansible }}"
+        resource_group: "{{ rg_name_Ansible }}"
+        virtual_network:
+          name: "{{ vnet_cible }}"
+          resource_group: "{{ rg_cible }}"
+        subnet_name: "{{ subnet_cible }}"
+        security_group: "{{ nsg_name_Ansible }}"       
+        ip_configurations:
+        - name: ipconfig1
+          public_ip_address_name: "{{ public_ip_Ansible }}"
+          primary: True
+
+    # Recuperation des infos du secret dans un Key Vault (cle SSH)
+    - azure.azcollection.azure_rm_keyvaultsecret_info:
+        vault_uri: "https://{{ vault_name }}.vault.azure.net"
+        name: "{{ secret_name }}"            
+      register: sshkey
+    
+    # Creation de la VM Ansible
+    - azure.azcollection.azure_rm_virtualmachine:
+        name: "{{ vm_name_Ansible }}"
+        resource_group: "{{ rg_name_Ansible }}"
+        vm_size: "{{ vm_size }}"
+        managed_disk_type: "{{ vm_type_disk }}"
+        admin_username: "{{ admin_user_vm }}"
+        ssh_password_enabled: false
+        ssh_public_keys:
+        - path: "/home/{{ admin_user_vm }}/.ssh/authorized_keys"
+          key_data: "{{ sshkey['secrets'][0]['secret'] }}" # option : mettre sa cle ssh à la place de "{{ sshkey['secrets'][0]['secret'] }}"
+        network_interfaces: "{{ nic_name_Ansible }}"
+        image:
+          offer: "{{ offer_vm }}"
+          publisher: "{{ publisher_vm }}"
+          sku: "{{ sku_vm }}"
+          version: "{{ version_vm }}"
+      register: vm
+
+    - debug:
+        var: vm   

@@ -1,0 +1,91 @@
+# Installation Ansible dans la VM Playbook
+---
+- hosts: all
+  remote_user: pierrc
+  become: yes  
+
+  vars:
+    user: pierrc
+
+  tasks:
+    - name: Mise à jour      
+      apt:
+        update_cache: yes
+        upgrade: dist
+        force_apt_get: yes
+
+    - name: echo 'alias python=python3'      
+      shell: echo 'alias python=python3' >> /home/{{user}}/.bashrc
+
+    - name: echo 'StrictHostKeyChecking no'      
+      shell: echo 'StrictHostKeyChecking no' >> /home/{{user}}/.ssh/config
+
+    - name: Installation python3-pip
+      apt: 
+        name: python3-pip
+        state: present
+
+    - name: Installation Ansible
+      shell: pip3 install ansible      
+
+    - name: Telechargement des modules Azure
+      become: yes
+      get_url:
+        url: https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt
+        dest: /home/{{user}}/
+    
+    - name: Installation des modules Ansible pour Azure
+      shell: pip3 install -r requirements-azure.txt
+    
+    - name: Installation des collections "azure.azcollection"  
+      shell: ansible-galaxy collection install azure.azcollection
+
+    - name: Creation du repertoire ".azure"
+      file:
+        path: /home/{{ user }}/.azure
+        state: directory
+    
+    - name: Copie du fichier "credentials" (authentification Azure)
+      copy:
+        src: credentials
+        dest: /home/{{user}}/.azure/credentials
+    
+    - name: Copie "Key SSH Privée"
+      copy:
+        src: /home/{{user}}/.ssh/id_rsa
+        dest: /home/{{user}}/.ssh/id_rsa
+
+    - name: Copie "Key SSH Publique"
+      copy:
+        src: /home/{{user}}/.ssh/id_rsa.pub
+        dest: /home/{{user}}/.ssh/id_rsa.pub
+
+    - name: Droit repertoire ".ssh"
+      file:
+        path: /home/{{user}}/.ssh
+        mode: 0700
+        owner: "{{user}}"
+
+    - name: Droit sur les fichiers ()
+      file:
+        path: "{{item}}"       
+        mode: 0600
+        owner: "{{user}}"
+      loop:
+        - /home/{{user}}/.ssh/id_rsa
+        - /home/{{user}}/.ssh/id_rsa.pub
+        - /home/{{user}}/.ssh/config
+
+    - name: Git Clone
+      git:
+        repo: git@github.com:Pierre-Chesne/Ansible_Azure.git               
+        dest: /home/{{user}}/Ansible_Azure
+        key_file: /home/{{user}}/.ssh/id_rsa
+        accept_hostkey: yes
+        force: yes
+        version: main 
+      
+      
+    
+
+      

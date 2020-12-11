@@ -38,6 +38,13 @@
             access: Allow
             priority: 110
             direction: Inbound
+          
+          - name: AllowSSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Allow
+            priority: 110
+            direction: Inbound
 
     - azure.azcollection.azure_rm_networkinterface:
         name: "{{ nic_name_web }}"

@@ -1,0 +1,26 @@
+# Environnement cible
+rg_cible: RG_VM_Hosts
+vnet_cible: Vnet_VM_Hosts
+subnet_cible: Subnet_VM_Hosts
+location: westeurope
+
+# Environnement VM Ansible
+vm_name_Ansible: Vm-Playbook
+vm_size: Standard_A2_v2
+vm_type_disk: Standard_LRS
+admin_user_vm: pierrc        
+offer_vm: UbuntuServer
+publisher_vm: Canonical
+sku_vm: 18.04-LTS
+version_vm: latest
+rg_name_Ansible: RG_Playbook
+nic_name_Ansible: Nic_Playbook
+public_ip_Ansible: IP-Pub-Playbook
+allocation_method: dynamic
+nsg_name_Ansible: NSG_Playbook
+
+# Option (recuperation de la cle SSH dans un Key Vault)
+vault_name: KeyVaultPierrc
+secret_name: PublicKey
+
+
