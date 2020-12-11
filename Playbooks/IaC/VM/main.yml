@@ -62,7 +62,7 @@
           public_ip_address_name: "{{ public_ip_web }}"
           primary: True
 
-    #Récupération de la clée SSH dans le  "Key Vault" 
+    #Récupération de la clée publique SSH dans le  "Key Vault" 
     - azure.azcollection.azure_rm_keyvaultsecret_info:
         vault_uri: "https://{{ vault_name }}.vault.azure.net"
         name: "{{ secret_name }}"            
@@ -78,7 +78,7 @@
         ssh_password_enabled: false
         ssh_public_keys:
         - path: "/home/{{ admin_user_vm }}/.ssh/authorized_keys"
-          key_data: "{{ sshkey['secrets'][0]['secret'] }}"
+          key_data: "{{ sshkey['secrets'][0]['secret'] }}" # possibilité de mettre la clé publique SSH (pour des tests)
         network_interfaces: "{{ nic_name_web }}"
         image:
           offer: "{{ offer_vm }}"
