@@ -6,27 +6,31 @@
     - vars.yml
 
   tasks:
-    # Creation du "ressource groupe"
+    # Creation du "resource group"
     - azure.azcollection.azure_rm_resourcegroup:
         name: "{{ rg_name }}"
         location: "{{ location }}"
-
+    
+    # Creation du "Public IP"
     - azure.azcollection.azure_rm_publicipaddress:
         resource_group: "{{ rg_name }}"
         name: "{{ public_ip_web }}"
         allocation_method: "{{ allocation_method }}"
-      
+
+    #Creation du "Virtual Network"  
     - azure.azcollection.azure_rm_virtualnetwork:
         name: "{{ vnet_name }}"
         resource_group: "{{ rg_name }}"
         address_prefixes_cidr: "{{ address_prefixes_cidr_vnet }}"
 
+    #Creation du "Subnet" 
     - azure.azcollection.azure_rm_subnet:
         name: "{{ subnetfe_name }}"
         virtual_network_name: "{{ vnet_name }}"
         resource_group: "{{ rg_name }}"
         address_prefix_cidr: "{{ address_prefix_cidr_subnetfe }}"
 
+    #Creation du "Network Security Group" 
     - azure.azcollection.azure_rm_securitygroup:
         resource_group: "{{ rg_name }}"
         name: "{{ nsg_web_name }}"
@@ -46,6 +50,7 @@
             priority: 110
             direction: Inbound
 
+    #Creation du "NIC" 
     - azure.azcollection.azure_rm_networkinterface:
         name: "{{ nic_name_web }}"
         resource_group: "{{ rg_name }}"
@@ -57,11 +62,13 @@
           public_ip_address_name: "{{ public_ip_web }}"
           primary: True
 
+    #Récupération de la clée SSH dans le  "Key Vault" 
     - azure.azcollection.azure_rm_keyvaultsecret_info:
         vault_uri: "https://{{ vault_name }}.vault.azure.net"
         name: "{{ secret_name }}"            
       register: sshkey
 
+    #Creation du "VM" 
     - azure.azcollection.azure_rm_virtualmachine:
         name: "{{ vm_name_web }}"
         resource_group: "{{ rg_name }}"
@@ -78,8 +85,8 @@
           publisher: "{{ publisher_vm }}"
           sku: "{{ sku_vm }}"
           version: "{{ version_vm }}"
-      register: vm
+      register: vm # Récupération des infos de la VM
 
     - debug:
-        var: vm
+        var: vm # Visualisation des infos de la VM 
         
