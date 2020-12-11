@@ -7,3 +7,4 @@ Le playbook déploie:<br/>
 - Un "Network Security Group" avec les règles (Http;SSH)
 - Une "NIC"
 - Une VM
+Pour les paramétrages du déploiement voir le fichier ```vars.yml```

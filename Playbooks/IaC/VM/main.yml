@@ -1,4 +1,4 @@
-# Installation d'une VM
+# Installation d'une simple VM
 ---
 - name: Creation d'une VM
   hosts: localhost
