@@ -116,7 +116,7 @@ Ansible peut être utilisé pour récupérer des informations auprès de diverse
 Le nom du fichier d'inventaire doit finir impérativement par __azure_rm__ (ex: mon_inventaire_azure_rm).<br/>
 Pour construire cet inventaire "Dynamic", il est obligatoire qu'Ansible puisse interroger Azure, soit en passant par un "Service Principal" (<a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation">"procédure".</a>) ou en utilisant une authentification Az Cli (<a href="https://docs.microsoft.com/fr-fr/cli/azure/install-azure-cli">"Az CLI".</a>)<br/>
  __Il est recommandé d'utiliser un inventaire "Dynamic"__ dans un environnement Azure.<br/><a href="https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py">Documentation complète de l'inventaire "Dynamic"</a><br/>
-Exemple:<br/>
+Exemple d'inventaire "dynamic":<br/>
 ```
 ---
 plugin: azure_rm
