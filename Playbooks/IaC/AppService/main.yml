@@ -6,10 +6,12 @@
     - vars.yml
 
   tasks:
+    # Creation du "resource group"
     - azure.azcollection.azure_rm_resourcegroup:
         name: "{{ rg_name }}"
         location: "{{ location }}"
 
+    # Creation d'un "App Service plan" & d'un "App Service"
     - azure.azcollection.azure_rm_webapp:
         resource_group: "{{ rg_name }}"
         name: "{{ webapp_name }}"
