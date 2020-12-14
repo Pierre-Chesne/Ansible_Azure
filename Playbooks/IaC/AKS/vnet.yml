@@ -9,14 +9,4 @@
     name: "{{ subnet_name }}"
     address_prefix_cidr: 10.240.0.0/16
     virtual_network_name: "{{ vnet_name }}"
-  register: subnet
-
-
-- azure.azcollection.azure_rm_subnet:
-    resource_group: "{{ rg_name }}"
-    name: "{{ subnet_name_vn }}"
-    address_prefix_cidr: 10.241.0.0/16
-    virtual_network_name: "{{ vnet_name }}"
-    private_endpoint_network_policies: "Enabled"
-    private_link_service_network_policies: "Enabled"
-  register: subnetvn      
+  register: subnet     

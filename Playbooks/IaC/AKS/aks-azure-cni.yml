@@ -16,8 +16,7 @@
 
     - name: creation du cluster AKS
       vars:
-        vnet_subnet_id: "{{ subnet.state.id }}"
-        subnet_resource_id: "{{ subnetvn.state.id }}"        
+        vnet_subnet_id: "{{ subnet.state.id }}"                
       include_tasks: aks.yml
 
     - name: Detail de la configuration
