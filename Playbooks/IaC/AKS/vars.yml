@@ -1,3 +1,4 @@
+# Variables
 location: westeurope
 rg_name: RG_AKS_000
 vnet_name: Vnet_AKS_000
