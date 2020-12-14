@@ -1,4 +1,3 @@
-```ansible-playbook main.yml```<br/>
 Pour exécuter le playbook : ```ansible-playbook main.yml```<br/>
 Le playbook déploie:<br/>
 - Un "resource group"
