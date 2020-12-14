@@ -35,8 +35,8 @@
       admin_username: "{{ user_name }}"
       ssh_key: "{{ sshkey['secrets'][0]['secret'] }}"
     service_principal:
-      client_id: "{{ idspnaks['secrets'][0]['secret'] }}"
-      client_secret: "{{ spnaks['secrets'][0]['secret'] }}"
+      client_id: "{{ idspnaks['secrets'][0]['secret'] }}" # possibilité de mettre l'ID du Service Pricipal (pour des tests)
+      client_secret: "{{ spnaks['secrets'][0]['secret'] }}" # possibilité de mettre le secret l'ID du Service Pricipal (pour des tests)
     network_profile:
       network_plugin: azure
       docker_bridge_cidr: 172.17.0.1/16
