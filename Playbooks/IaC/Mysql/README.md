@@ -2,6 +2,7 @@ Pour exécuter le playbook : ```ansible-playbook main.yml```<br/>
 Le playbook déploie:<br/>
 - Un "resource group"
 - Du service "Azure Database for MySQL server" et la Base de donnée<br/>
+
 Pour ouvrir le "firewall" pour accéder au serveur "MySQL" depuis l'extérieur voici l'exemple de playbook<br/>
 ```
 # Firewall
