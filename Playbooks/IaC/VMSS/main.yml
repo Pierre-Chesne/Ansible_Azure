@@ -22,7 +22,7 @@
             access: Allow
             priority: 1001
             direction: Inbound
-          - name: HTTTP
+          - name: HTTP
             protocol: Tcp
             destination_port_range: 80
             access: Allow
@@ -75,7 +75,6 @@
         name: "{{ secret_name }}"            
       register: sshkey
 
-
     # Création du VM Scalset 
     - azure.azcollection.azure_rm_virtualmachinescaleset:
         resource_group: "{{ rg_name }}"
@@ -87,6 +86,7 @@
         admin_username: "{{ admin_username }}"
         upgrade_policy: Manual
         load_balancer: "{{ vmss_lb_name }}"
+        location: "{{ location }}"
         terminate_event_timeout_minutes: 10
         ssh_password_enabled: false
         ssh_public_keys:
@@ -98,3 +98,6 @@
           publisher: "{{ publisher_vm }}"
           sku: "{{ sku_vm }}"
           version: "{{ version_vm }}"
+        tags:
+          Ansible: "{{ tag1 }}"
+           

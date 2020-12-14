@@ -86,6 +86,9 @@
           publisher: "{{ publisher_vm }}"
           sku: "{{ sku_vm }}"
           version: "{{ version_vm }}"
+        tags:
+          Ansible: "{{ tag1 }}"    
+    
       register: vm # Récupération des infos de la VM
 
     - debug:

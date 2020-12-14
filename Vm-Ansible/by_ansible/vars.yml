@@ -1,5 +1,5 @@
 # Environnement cible
-rg_cible: RG_VM_Hosts
+rg_cible: RG_VMSS_Hosts
 vnet_cible: Vnet_VM_Hosts
 subnet_cible: Subnet_VM_Hosts
 location: westeurope

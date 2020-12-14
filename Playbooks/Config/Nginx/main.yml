@@ -1,0 +1,19 @@
+---
+- hosts: all
+  remote_user: pierrc
+  become: yes
+
+  vars:
+    user: pierrc
+
+  tasks:
+    - name: Mise à jour
+      apt:
+        update_cache: yes
+        upgrade: dist
+        force_apt_get: yes
+
+    - name: Installation Nginx
+      apt:
+        name: nginx
+        state: present

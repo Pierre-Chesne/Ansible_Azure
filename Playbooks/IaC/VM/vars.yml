@@ -19,3 +19,4 @@ offer_vm: UbuntuServer
 publisher_vm: Canonical
 sku_vm: 18.04-LTS
 version_vm: latest
+tag1: Vm

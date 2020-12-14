@@ -112,7 +112,7 @@ Résultat:
 }
 ```
 - __Inventaire "Dynamic"__<br/>
-Ansible peut être utilisé pour récupérer des informations auprès de diverses sources (y compris des sources d'Azure) pour construire un inventaire "Dynamic". Grâce au plugin "azure_rm", plus besoin de renseigner les IPs ou les noms d'hôtes dans l'inventaire on renseigne uniquement un "ressource group".<br/>
+Ansible peut être utilisé pour récupérer des informations auprès de diverses sources (y compris des sources d'Azure) pour construire un inventaire "Dynamic". Grâce au plugin "azure_rm", plus besoin de renseigner les IPs ou les noms d'hôtes dans l'inventaire on renseigne uniquement un "ressource group" (VM ou VMSS). __Il est recommandé d'utiliser un inventaire "Dynamic"__ dans un environnement Azure.<br/> 
 Le nom du fichier d'inventaire doit finir impérativement par __azure_rm__ (ex: mon_inventaire_azure_rm).<br/>
 Pour construire cet inventaire "Dynamic", il est obligatoire qu'Ansible puisse interroger Azure, soit en passant par un "Service Principal" (<a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation">"procédure".</a>) ou en utilisant une authentification Az Cli (<a href="https://docs.microsoft.com/fr-fr/cli/azure/install-azure-cli">"Az CLI".</a>)<br/>
 Exemple:<br/>

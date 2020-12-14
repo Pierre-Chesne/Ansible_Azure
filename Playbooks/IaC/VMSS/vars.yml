@@ -18,3 +18,4 @@ sku_vm: 18.04-LTS
 version_vm: latest
 vault_name: KeyVaultPierrc
 secret_name: PublicKey
+tag1: Vmss
