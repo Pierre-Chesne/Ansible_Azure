@@ -6,15 +6,18 @@
     - vars.yml
 
   tasks:
+    # Creation du "resource group"
     - azure.azcollection.azure_rm_resourcegroup:
         name: "{{ rg_name }}"
         location: "{{ location }}"
 
+    # Récupération du mot de passe dans Azure Key Vault
     - azure.azcollection.azure_rm_keyvaultsecret_info:
         vault_uri: "https://{{ vault_name }}.vault.azure.net"
         name: "{{ secret_name }}"            
       register: password
 
+    # Creation de service "MySQL" et la Base
     - azure.azcollection.azure_rm_mysqlserver:
         resource_group: "{{ rg_name }}"
         name: "{{ mysqlserver_name }}"
