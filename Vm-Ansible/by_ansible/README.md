@@ -15,7 +15,7 @@ Prérequis:<br/>
 ansible-playbook Install_Vm.yml
 ```
 Ce "playbook" déploie :
-- Un "resource group RG-Playbook"
+- Un "resource group RG_Playbook"
 - Une "Public IP"
 - Un "Network Security Group" avec une règle (SSH)
 - Une "NIC"
