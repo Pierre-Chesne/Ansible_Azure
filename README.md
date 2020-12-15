@@ -1,3 +1,7 @@
+<p class="flotte">
+ <img src="./png/aa.png" width='500'/>
+</p>
+
 ## Ansible dans un environnement Azure<br/>
 Avant de parler d'Ansible dans un environnement Azure, voici une petite introduction. Ansible est une plate-forme pour la configuration et la gestion de multiples environements d'architectures. Ansible combine le déploiement de logiciels "multi-noeud", l'exécution de tâches ad-hoc et la gestion de configuration. C'est un produit open-source qui appartient à Red Hat depuis octobre 2015. <br/>
 
