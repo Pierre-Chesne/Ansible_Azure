@@ -15,11 +15,11 @@ Prérequis:<br/>
 ansible-playbook Install_Vm.yml
 ```
 Ce "playbook" déploie :
-- Un "resource group RG_Playbook"
-- Une "Public IP"
-- Un "Network Security Group" avec une règle (SSH)
-- Une "NIC"
-- Une VM<br/>
+- Un "resource group - RG_Playbook"
+- Une "Public IP - IP-Pub-Playbook "
+- Un "Network Security Group avec une règle (SSH) -NSG_Playbook"
+- Une "NIC - Nic_Playbook"
+- Une VM - Vm-Playbook<br/>
 
 Il faudra renseigner dans le fichier ```vars.yml```:<br/>
 - le "resource group" du Vnet/Subnet des serveurs cibles
