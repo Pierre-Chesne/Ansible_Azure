@@ -35,6 +35,7 @@ client_id=<security-principal-appid>
 secret=<security-principal-password>
 tenant=<security-principal-tenant>
 ```
+Puis exécuter le playbook :<br/>
 ```
 ansible-playbook -i inventaire_azure_rm.yml Install_Ansible.yml
 ```
