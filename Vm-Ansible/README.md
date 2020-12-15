@@ -1,6 +1,6 @@
 ## Scénario: "Installation d'une VM Ansible dans Azure (au plus près des serveurs cibles)".<br/>
 <p class="flotte">
- <img src="./png/ansible-ansible.png" width='300'/>
+ <img src="./png/aa.png" width='500'/>
 </p>
 Voici un "Playbook Ansible" qui déploie automatiquement une VM dans Azure avec Ansible dans un subnet (au plus près des serveurs cibles)<br/>
 Prérequis:<br/>
