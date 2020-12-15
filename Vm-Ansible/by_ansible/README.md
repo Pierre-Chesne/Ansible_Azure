@@ -20,7 +20,10 @@ Ce "playbook" déploie :
 - Un "Network Security Group" avec une règle (SSH)
 - Une "NIC"
 - Une VM<br/>
-
+Il faudra renseigner dans le fichier ```vars.yml```:<br/>
+- le "resource group" du Vnet/Subnet des serveurs cibles
+- le "vnet" des serveurs cibles
+- le "subnet" des serveurs cibles
 2/ Pour déployer Ansible sur la VM dans Azure <br/>
 ```
 ansible-playbook -i inventaire_azure_rm.yml Install_Ansible.yml
