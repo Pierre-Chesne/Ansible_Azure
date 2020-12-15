@@ -27,6 +27,14 @@ Il faudra simplement renseigner dans le fichier ```vars.yml```:<br/>
 - le "subnet" des serveurs cibles<br/>
 
 2/ Pour déployer Ansible sur la VM dans Azure <br/>
+Editer le fichier credentials et renseigmer:<br/>
+```
+[default]
+subscription_id=<your-subscription_id>
+client_id=<security-principal-appid>
+secret=<security-principal-password>
+tenant=<security-principal-tenant>
+```
 ```
 ansible-playbook -i inventaire_azure_rm.yml Install_Ansible.yml
 ```
