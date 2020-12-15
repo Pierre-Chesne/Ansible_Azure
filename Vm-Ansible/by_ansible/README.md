@@ -40,3 +40,5 @@ Puis exécuter le playbook :<br/>
 ansible-playbook -i inventaire_azure_rm.yml Install_Ansible.yml
 ```
 
+3/ Pour déployer les configurations sur les serveurs cibles, reste plus qu'a se connecter sur la VM Ansible dans Azure , faire un inventaire "dynamic" et exécuter les playbooks. Une fois terminer, détrire le "resource groupe RG_Playbook" 
+
