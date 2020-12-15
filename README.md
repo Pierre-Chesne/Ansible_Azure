@@ -1,5 +1,5 @@
 <p class="flotte">
- <img src="./png/aa.png" width='500'/>
+ <img src="https://github.com/Pierre-Chesne/Ansible_Azure/blob/main/png/ansible-ansible.png" width='500'/>
 </p>
 
 ## Ansible dans un environnement Azure<br/>
