@@ -5,8 +5,8 @@
 Voici un "Playbook Ansible" qui déploie automatiquement une VM dans Azure avec Ansible dans un subnet (au plus près des serveurs cibles)<br/>
 Prérequis:<br/>
 
-- Avoir un "Service Principal" ayant les droits de déployer des ressources dans un abonnement Azure
-- Avoir Ansible d'installé sur votre machine ou serveur (on-premise)
+- Avoir un "Service Principal" ayant les droits de déployer des ressources dans un abonnement Azure <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation">Procédure</a>
+- Avoir Ansible d'installé sur votre machine ou serveur (on-premise) <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Installation">Procédure</a>
 - Les serveurs cibles dans Azure doivent être accessible via SSH (TCP22)
 - Les clés SSH (publique & privé) doivent être stocker sur le serveur Ansible "on-premise" (ce sont les mêmes clés qui seront utilisées entre votre serveur Ansible qui déploie la VM Ansible dans Azure et ce sont les mêmes clés qui seront utilisées pour les configurations entre le serveur Ansible Azure et les serveurs cibles)
 
@@ -21,7 +21,7 @@ Ce "playbook" déploie :
 - Une "NIC - Nic_Playbook"
 - Une VM - Vm-Playbook<br/>
 
-Il faudra renseigner dans le fichier ```vars.yml```:<br/>
+Il faudra simplement renseigner dans le fichier ```vars.yml```:<br/>
 - le "resource group" du Vnet/Subnet des serveurs cibles
 - le "vnet" des serveurs cibles
 - le "subnet" des serveurs cibles<br/>
