@@ -24,7 +24,8 @@ Ce "playbook" déploie :
 Il faudra renseigner dans le fichier ```vars.yml```:<br/>
 - le "resource group" du Vnet/Subnet des serveurs cibles
 - le "vnet" des serveurs cibles
-- le "subnet" des serveurs cibles
+- le "subnet" des serveurs cibles<br/>
+
 2/ Pour déployer Ansible sur la VM dans Azure <br/>
 ```
 ansible-playbook -i inventaire_azure_rm.yml Install_Ansible.yml
