@@ -4,7 +4,7 @@ Prérequis :<br/>
 - NSG avec un accès TCP 22 (ssh)
 - Renseigner le nom du "resource group" dans l'inventaire "dynamic" (mon_inventaire_azure_rm.yml)
 
-Voici les actions du "playbook":<br/>
+Voici les "tasks" du "playbook":<br/>
 - Mise à jour de la VM Ubuntu -> Module Ansible "apt"
 - Installation des dépendances pour l'installation de "Docker" -> Module Ansible "apt"
 - Ajout du "répository" -> Module Ansible "apt_repository"
