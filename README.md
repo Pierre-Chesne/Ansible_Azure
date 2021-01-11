@@ -189,6 +189,7 @@ __Deuxième approche__, la plus sécurisée, on pousse les configurations depuis
 <p class="flotte">
  <img src="./png/ansible-ansible.png" width='500'/>
 </p>
+<a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Vm-Ansible">"Exemple pour déployer une VM avec Ansible dans Azure (au plus près des serveurs cibles".</a>
 ## Scénario 3: Ansible dans des chaînes de déploiement<br/>
 <br/>  
 
