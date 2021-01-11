@@ -183,7 +183,7 @@ __Première approche__, la plus simple mais la moins sécurisée, on pousse les 
 <p class="flotte">
  <img src="./png/ansible-azure.png" width='500'/>
 </p>
-- <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/Config/Wp">"Exemple d'un playbook qui déploie automatiquement un "Wordpress" dans un "container Docker" sur une VM dans Azure".</a><br/> 
+<a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/Config/Wp">"Exemple d'un playbook qui déploie automatiquement un "Wordpress" dans un "container Docker" sur une VM dans Azure".</a><br/> 
 
 __Deuxième approche__, la plus sécurisée, on pousse les configurations depuis une VM dans Azure au plus près des serveurs cibles. Cela nécessite un peu plus de configuration et de préparation car dans cette approche on automatise l'installation d'une VM Linux avec Ansible dans le "subnet" au sein du "vnet" des serveurs cibles.<br/>
 <p class="flotte">
