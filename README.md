@@ -182,14 +182,13 @@ Maintenant que l'inventaire "static" ou dynamic" est construit, il ne reste plus
 __Première approche__, la plus simple mais la moins sécurisée, on pousse les configurations depuis un seveur Ansible hors Azure (On-Premise ou autres) sur des serveurs cibles qui s'exécutent dans Azure. Dans cette approche, on utilise une connexion SSH via Internet avec des IP publiques et des NSG autorisant les flux "TCP22" entrants.<br/>
 <p class="flotte">
  <img src="./png/ansible-azure.png" width='500'/>
-</p> 
+</p>
+- <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/Config/Wp">"Exemple d'un playbook qui déploie automatiquement un "Wordpress" dans un "container Docker" sur une VM dans Azure".</a><br/> 
 
 __Deuxième approche__, la plus sécurisée, on pousse les configurations depuis une VM dans Azure au plus près des serveurs cibles. Cela nécessite un peu plus de configuration et de préparation car dans cette approche on automatise l'installation d'une VM Linux avec Ansible dans le "subnet" au sein du "vnet" des serveurs cibles.<br/>
 <p class="flotte">
  <img src="./png/ansible-ansible.png" width='500'/>
-</p> 
-- <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/Config/Wp">"Exemple d'un playbook qui déploie automatiquement un "Wordpress" dans un "container Docker" sur une VM dans Azure".</a><br/>
-
+</p>
 ## Scénario 3: Ansible dans des chaînes de déploiement<br/>
 <br/>  
 
