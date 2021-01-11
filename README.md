@@ -188,7 +188,8 @@ __Deuxième approche__, la plus sécurisée, on pousse les configurations depuis
 <p class="flotte">
  <img src="./png/ansible-ansible.png" width='500'/>
 </p> 
-- <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/Config/Wp">"Exemple d'un playbook qui déploie automatiquement un "Wordpress" dans un "container Docker" sur une VM dans Azure".</a>
+- <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Playbooks/Config/Wp">"Exemple d'un playbook qui déploie automatiquement un "Wordpress" dans un "container Docker" sur une VM dans Azure".</a><br/>
+
 ## Scénario 3: Ansible dans des chaînes de déploiement<br/>
 <br/>  
 
