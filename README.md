@@ -16,7 +16,7 @@ A la différence d'autres solutions du marché (Puppet, Chef, ...), Ansible est 
 <p class="flotte">
  <img src="./png/ansible-schema.png" width='600'/>
 </p>
-Il existe deux versions d’Ansible, <a href="www.ansible.com/community">la version communautaire</a> et la version entreprise proposée par Red Hat la <a href="www.redhat.com/fr/technologies/management/ansible">"Red Hat Ansible Automation Platform".</a>
+Il existe deux versions d’Ansible, <a href="https://www.ansible.com/community">la version communautaire</a> et la version entreprise proposée par Red Hat la <a href="https://www.redhat.com/fr/technologies/management/ansible">"Red Hat Ansible Automation Platform".</a>
 Cette dernière s’appuie sur les composants:<br/>
 
 - <a href="https://www.ansible.com/products/engine">"Ansible Engine".</a><br/>
