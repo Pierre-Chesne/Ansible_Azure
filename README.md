@@ -192,7 +192,14 @@ Maintenant que l'inventaire "static" ou dynamic" est construit, il ne reste plus
 <a href="https://github.com/Pierre-Chesne/Ansible_Azure/tree/main/Vm-Ansible">"Exemple pour déployer une VM avec Ansible dans Azure" (au plus près des serveurs cibles).</a>
 
 ## Scénario 3: Ansible dans des chaînes de déploiement<br/>
-<br/>  
+Ansible est présent dans les "Runners" de GitHub Actions, il est également présent dans les "Agents d'Azure DevOps". Il est donc facile d'utiliser Ansible dans un "Workflows GitHub Action" ou dans un "Pipeline d'Azure DevOps".<br/>
+<a href="https://github.com/Pierre-Chesne/github-smarthotel360/blob/dev/.github/workflows/dev.yml">"Exemple d'un Workflow Github Actions</a>:<br/>
+- Qui "Build" une application Java (ROOT.war) en la publiant en artefact
+- Qui publie un playbook __Ansible__ en artefact
+- Qui déploie le playbook __Ansible__ (App Service Plan, App Service et Azure Database for MySQL server) en s'appuyant sur la version d'__Ansible__ du "Runner" de "GitHub Actions"
+- Qui déploie l'application Java dans l'App Service
+
+ 
 
 
 
